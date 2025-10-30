@@ -22,6 +22,8 @@
 #include <stdlib.h>
 #endif
 
+#include<time.h>
+
 #include <glib-unix.h>
 
 #include <locale.h>

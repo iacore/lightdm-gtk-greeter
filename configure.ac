@@ -13,7 +13,7 @@
 
 dnl Process this file with autoconf to produce a configure script.
 
-AC_PREREQ([2.64])
+AC_PREREQ([2.71])
 AC_INIT([lightdm-gtk-greeter],[2.0.8],[https://github.com/xubuntu/lightdm-gtk-greeter])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_SRCDIR([src/lightdm-gtk-greeter.c])
@@ -65,8 +65,8 @@ UNITY_IDO_PKG=libido3-0.1
 dnl ###########################################################################
 
 AC_ARG_ENABLE([libindicator],
-    AC_HELP_STRING([--enable-libindicator], [Enable libindicator support])
-    AC_HELP_STRING([--disable-libindicator], [Disable libindicator support]),
+    AS_HELP_STRING([--enable-libindicator],[Enable libindicator support])
+    AS_HELP_STRING([--disable-libindicator],[Disable libindicator support]),
             [], [enable_libindicator=yes])
 
 AC_ARG_WITH([libindicator], AS_HELP_STRING([--with-libindicator=ayatana|unity], [Preferred indicator backend [default=ayatana]]))
@@ -140,8 +140,8 @@ AC_SUBST(SYSTEMD_SERVICE_DIR)
 dnl ###########################################################################
 
 AC_ARG_ENABLE([libido],
-    AC_HELP_STRING([--enable-libido], [Enable libido support])
-    AC_HELP_STRING([--disable-libido], [Disable libido support]),
+    AS_HELP_STRING([--enable-libido],[Enable libido support])
+    AS_HELP_STRING([--disable-libido],[Disable libido support]),
             [], [enable_libido=yes])
 
 have_ido=no
@@ -190,8 +190,8 @@ AS_IF([test "x$with_libxklavier" = "xyes"],
 dnl ###########################################################################
 
 AC_ARG_ENABLE([at-spi-command],
-    AC_HELP_STRING([--enable-at-spi-command[=command]], [Try to start at-spi service]])
-    AC_HELP_STRING([--disable-at-spi-command], [Do not start at-spi service]),
+    AS_HELP_STRING([--enable-at-spi-command[=command]],[Try to start at-spi service])]
+    AS_HELP_STRING([--disable-at-spi-command],[Do not start at-spi service]),
     [], [])
 
 AS_IF([test "x$enable_at_spi_command" != "xno"],
@@ -205,8 +205,8 @@ AS_IF([test "x$enable_at_spi_command" != "xno"],
 dnl ###########################################################################
 
 AC_ARG_ENABLE([indicator-services-command],
-    AC_HELP_STRING([--enable-indicator-services-command[=command]], [Try to start indicators service]])
-    AC_HELP_STRING([--disable-indicator-services-command], [Do not start indicators service]),
+    AS_HELP_STRING([--enable-indicator-services-command[=command]],[Try to start indicators service])]
+    AS_HELP_STRING([--disable-indicator-services-command],[Do not start indicators service]),
     [], [])
 
 AS_IF([test "x$enable_indicator_services_command" != "xno"],
@@ -220,8 +220,8 @@ AS_IF([test "x$enable_indicator_services_command" != "xno"],
 dnl ###########################################################################
 
 AC_ARG_ENABLE([kill-on-sigterm],
-    AC_HELP_STRING([--enable-kill-on-sigterm], [Kill greeter instance on SIGTERM, see LP1445461])
-    AC_HELP_STRING([--disable-kill-on-sigterm], [Don't kill greeter on SIGTERM, see LP1445461']),
+    AS_HELP_STRING([--enable-kill-on-sigterm],[Kill greeter instance on SIGTERM, see LP1445461])
+    AS_HELP_STRING([--disable-kill-on-sigterm],[Don't kill greeter on SIGTERM, see LP1445461']),
             [], [enable_kill_on_sigterm=no])
 
 AS_IF([test "x$enable_kill_on_sigterm" = "xyes"],
